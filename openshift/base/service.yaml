@@ -1,12 +1,13 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: argocolors-app
+  name: rollouts-demo
 spec:
-  selector:
-    app: argocolors-app
   ports:
-  - name: 8080-tcp
+  - port: 80
+    targetPort: http
     protocol: TCP
-    port: 8080
-    targetPort: 8080
+    name: http
+
+  selector:
+    app: rollouts-demo
